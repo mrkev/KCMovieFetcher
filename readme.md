@@ -9,10 +9,13 @@ A script to fetch movie information from the [OMDB API][1] (with a bit of iTunes
 2. Make a KCMovieFetcher Delegate.
 
 3. Create a new fetcher and call stuff on it. 
+
 ``` 
 KCMovieFetcher *fetcher = [[KCMovieFetcher init] alloc];
 
 [fetcher searchOMDBAPIWithQuery]; // Will asynchronously search and call
+```
+
 
 [1]:http://www.omdbapi.com
 
@@ -27,10 +30,11 @@ KCMovieFetcher *fetcher = [[KCMovieFetcher init] alloc];
 
 + (NSURL *)OMDBAPISearchURLWithQuery:(NSString *)query;
 + (NSURL *)OMDBAPIMovieURLForTitle:(NSString *)title year:(NSString *)year imdbid:(NSString *)imdbid;
+```
 
 ##Delegate Methods. 
 
-They are all optional. 
+They are all optional.
 
 ```
 - (void)movieFetcherDidRecieveOMDBAPISearchResults:(NSDictionary *)results;
@@ -43,7 +47,7 @@ They are all optional.
 
 - (void)movieFetcherDidFailToLoadAPIDataForMovieTags:(NSDictionary *)movieTags withError:(NSError *)error;
 - (void)movieFetcherDidFailToLoadiTunesDataForMovieTags:(NSDictionary *)movieTags withError:(NSError *)error;
-
+```
 
 ##Notes.
 
